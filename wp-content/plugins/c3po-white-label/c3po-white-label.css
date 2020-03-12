@@ -1,0 +1,91 @@
+/*! 
+ * Plugin: C3PO White label
+ * Plugin URI: https://usalafuerza.com/
+ * Description: Plugin para modificar la parte de backend de WordPress
+ * Version: 0.2
+ * Author: web@usalafuerza.com
+ * Author URI: https://usalafuerza.com/
+ * License: C3-PO Usalafuerza
+ * Text Domain: c3po-white-label
+ */
+
+  
+.c3po-white-label{}
+ 
+.c3po-white-label 
+    .welcome-panel-content .separator::before{
+        clear: both;
+    }
+
+.c3po-white-label 
+    .welcome-panel-content .separator::after{
+        clear: both;
+    }
+
+.c3po-white-label 
+    .welcome-panel-content .separator{ 
+            clear: both;
+            margin: 50px 0 30px 0;
+            border: 0px solid transparent;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #cacaca;
+            max-width: 95%; 
+        }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container{
+            font-size: 0;
+            vertical-align: top;
+        }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column{ 
+                width: 100%; 
+                margin-bottom: 5px;
+            }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column ul{ 
+                margin-top: 10px;
+                padding: 0 0 0 10px;
+            }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column ul li{ 
+                padding: 0;
+            }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column
+                .image img{ 
+                    width: 872px;
+                    max-width: 97%; 
+                    height: auto;
+                }
+
+.c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column p {
+                max-width: 90%;
+            }
+
+@media (min-width: 872px){
+
+    .c3po-white-label 
+    .welcome-panel-content
+        .welcome-panel-column-container
+            .welcome-panel-column{ 
+                width: 33%;
+        }
+ 
+}

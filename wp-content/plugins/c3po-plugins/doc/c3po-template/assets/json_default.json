@@ -1,0 +1,25 @@
+{
+  "title": "Estilos del tema 3",
+  "items": [
+    {
+      "title": "Color corporativo 3",
+      "inline": "span",
+      "classes": "c3po-content-color-corporation-primary"
+    },
+    {
+      "title": "Entrevista 3",
+      "items": [
+        {
+          "title": "Pregunta",
+          "block": "p",
+          "classes": "c3po-content-interview-question"
+        },
+        {
+          "title": "Respuesta 3",
+          "block": "p",
+          "classes": "c3po-content-interview-answer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+/*!
+ Theme Name:   Child theme
+ Template:     c3po-theme
+ Theme URI:    https://usalafuerza.com
+ Description:  Tema base preparado para trabajar con Droid Theme como padre.
+ Author:       web@usalafuerza.com
+ Author URI:   https://usalafuerza.com
+ Version:      1.0.0
+ License:      Privado
+ License URI:  https://usalafuerza.com 
+ Text Domain:  c3po-theme  
+*/ 
+/**
+* 1. Media querys & viewport
+*/
+    // xs - Default
+    // s
+    @mquery-s: 500px;
+    // m
+    @mquery-m: 768px;
+    // l
+    @mquery-l: 1024px;
+    // xl
+    @mquery-xl: 1300px;
+    // viewport
+    @width-viewport: 98%;
+    @max-width-viewport: 1200px;
+
+    // Separacion entre elementos:
+    @padding-s: 10px;
+    @padding-m: 10px;
+    @padding-l: 20px;
+
+/**
+* 2. Fonts
+*/
+    @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap');
+
+    @px-global-font-size:16; // Declared without px for calculation intentions
+    @corporative-font: 'Nunito Sans', sans-serif;
+    @content-font: Arial,"Helvetica Neue",Helvetica, sans-serif;
+
+/**
+* 3. Colors
+*/
+    @primary-color: rgb(149, 197, 87);
+    @secondary-color: #0c755b;
+    @lighten-primary-color: lighten( @primary-color , 15 );
+    @darken-primary-color: darken( @primary-color , 15 );
+
+    @h1-color : rgb(19, 42, 145);
+    @h2-color : rgb(43, 68, 151);
+    @h3-color: rgb(59, 99, 173);
+    @h4-color: rgb(69, 90, 134);
+    @text-color: #0c0c0c;
+    @text-discret-color: #787878;
+
+    @link-color: rgb(65, 15, 94);
+    @link-hover-color: #055c13;
+
+    @nav-link-color: #000000;
+    @nav-link-hover-color: #BE9600;
+
+    @input-text-color: @text-color;
+    @input-placeholder-color: #aaaaaa;
+    @input-background-color: #FFFFFF;
+    @input-border-color: #a77e7e;
+    @input-focus-border-color: #4A4A4A;
+
+    @gray-1-color: #d1d0d0;
+    @gray-2-color: #d3d3d3;
+    @gray-3-color: rgb(119, 117, 117);
+    @gray-4-color: #474747;
+
+    @error-color: #D0011B;
+    @lighten-error-color: lighten( @error-color , 15 );
+    @darken-error-color: darken( @error-color , 15 );
+    @warning-color: #FFA500;
+    @lighten-warning-color: lighten( @warning-color , 15 );
+    @darken-warning-color: darken( @warning-color , 15 );
+    @ok-color: #417505;
+    @lighten-ok-color: lighten( @ok-color , 15 );
+    @darken-ok-color: darken( @ok-color , 15 );
+    @info-color: rgb(61, 133, 216);
+    @lighten-info-color: lighten( @info-color , 15 );
+    @darken-info-color: darken( @info-color , 15 );
+
+/**
+* 4. Imports
+*/
+    // Global LESS functions / MIXINS
+    @import "vendor/droid-less-functions.less";
+    // CSS for global elements: Tags Header, footer, CTA, forms. Media Query grouped by elements
+    @import "global.less";
+    // CSS for each section: Home, Blog, Pages, contact. Media Query grouped by elements
+    @import "site.less";

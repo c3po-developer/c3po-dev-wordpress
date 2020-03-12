@@ -1,0 +1,285 @@
+h1 {
+    position: relative;
+  }
+  h1:after {
+    content: '<h1>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h1:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  h2 {
+    position: relative;
+  }
+  h2:after {
+    content: '<h2>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h2:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  h3 {
+    position: relative;
+  }
+  h3:after {
+    content: '<h3>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h3:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  h4 {
+    position: relative;
+  }
+  h4:after {
+    content: '<h4>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h4:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  h5 {
+    position: relative;
+  }
+  h5:after {
+    content: '<h5>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h5:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  h6 {
+    position: relative;
+  }
+  h6:after {
+    content: '<h6>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  h6:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  p {
+    position: relative;
+  }
+  p:after {
+    content: '<p>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  p:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  a {
+    position: relative;
+  }
+  a:after {
+    content: '<a>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  a:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  ul {
+    position: relative;
+  }
+  ul:after {
+    content: '<ul>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  ul:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  li {
+    position: relative;
+  }
+  li:after {
+    content: '<li>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  li:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  ol {
+    position: relative;
+  }
+  ol:after {
+    content: '<ol>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  ol:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  div {
+    position: relative;
+  }
+  div:after {
+    content: '<div>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  div:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  figure {
+    position: relative;
+  }
+  figure:after {
+    content: '<figure>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  figure:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  img {
+    position: relative;
+  }
+  img:after {
+    content: '<img>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  img:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }
+  table {
+    position: relative;
+  }
+  table:after {
+    content: '<table>';
+    position: absolute;
+    font-size: .6rem;
+    top: -12px;
+    left: 0;
+  }
+  table:before {
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.01rem dotted #bd2424;
+  }

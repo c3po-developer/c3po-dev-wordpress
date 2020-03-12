@@ -1,0 +1,165 @@
+
+// 1. HOME
+body.home{
+    main{
+     
+    }
+}
+
+// 2. PAGES
+main.site-page{
+    section{
+        h1{}
+        article{}
+    }
+}
+
+// 2.1 - PAGE TEMPLATES
+
+// 3. BLOG - INDEX
+main.site-index{ 
+    section{ 
+        article{
+            padding: 10px 15px;
+            margin: 30px 0;
+            background: #ffffff;
+            box-shadow: 1px 1px 4px -1px rgba(0,0,0,.28);
+            a.post-permalink{
+                display: block;
+                text-decoration: none;
+                color: #000;
+            }
+            h2.post-title{
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            figure.post-thumbnail{
+                width: 100%;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0;
+                margin: 0 0 15px 0;
+                max-height: 350px;
+                overflow: hidden;
+                white-space: nowrap;  
+                img{ 
+                    width: 100%;
+                    height: auto; 
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: scale(1.1);
+                    transition: all .6333s ease;
+
+                    &:hover{
+                        transform: scale(1);
+                    }
+                } 
+            }
+            p{
+                font-size: .9rem;
+                color: #1a1a1a
+            }
+            span.post-date, 
+            span.post-author{ 
+                color: #909090;
+                font-size: .8rem;
+            }
+        }
+    }   
+}
+
+// 4. SINGLE BLOG
+main.site-single{
+   section{
+       h1{}
+       article{
+           figure.post-thumbnail{
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
+            margin: 0 0 15px 0;
+            height: auto;
+            overflow: hidden;
+            white-space: nowrap;  
+            img{ 
+                width: 100%;
+                height: auto; 
+                display: inline-block;
+                vertical-align: middle;                 
+                } 
+           }
+       }
+   }
+}
+
+// 4.1 SINGLE CPT
+
+
+// 5. SEARCH
+main.site-search{
+   section{
+       article{}
+   }
+}
+
+// 6. 404
+main.site-404{
+   section{
+        .card404{
+            box-shadow: 1px 1px 4px -1px rgba(0,0,0,.28);
+            border:1px solid #e1e1e1;
+            text-align:center;
+            padding:30px;
+            max-width:900px;
+            width:80%;
+            margin:30px auto;
+            h2{
+                margin-bottom:10px;
+            }
+            p.desc404{
+                margin:10px 0 30px 0;
+            }
+            form{
+                input[type="text"]{
+                    background:@input-background-color;
+                    border:1px solid @input-border-color;
+                    width: 200px;
+                    padding:4px 10px;
+                }
+                input[type="submit"]{
+                    border:0;
+                    background: @primary-color;
+                    padding:4px 10px;
+                    color: lighten( @primary-color , 60 );
+                    width:100px;
+                    &:hover{
+                        background: darken( @primary-color , 15 );
+                    }
+                }
+            }
+            .home_link{
+                display: block;
+                font-weight: bold;
+                text-decoration:none;
+                margin-top:30px;
+            }
+        }
+       article{}
+   }
+}
+
+// 7. CATS
+main.site-categories{
+   section{
+       article{}
+   }
+}
+
+// 8. TAGS
+main.site-tag{
+   section{
+       article{}
+   }
+}

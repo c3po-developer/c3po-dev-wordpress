@@ -1,0 +1,243 @@
+/*
+TOC
+1 - Fonts
+2 - Layouts
+3 - Fills / Borders
+4 - Transforms
+5 - Filters
+6 - Animations
+7 - Tools
+*/
+
+
+
+// 1. Fonts 
+@pxtorem-js-function: ~ `pxtorem = function(px){ if (typeof rmxsBaseFontSize == 'undefined')  rmxsBaseFontSize = @{px-global-font-size}; return (parseInt(px.replace(/(^\d+)(.+$)/i,'$1')) / rmxsBaseFontSize + 'rem') }`;
+
+.font-size(@value){
+    font-size: @value;
+}
+.font-size(@value) when (ispixel(@value)){
+    @rem-value: ~`pxtorem('@{value}')`;
+    font-size: @rem-value;
+}
+.line-height(@value){
+    line-height: @value;
+}
+.line-height(@value) when (ispixel(@value)){
+    @rem-value: unit(( unit(@value) / 10 ) , rem);
+    line-height: @rem-value;
+}
+
+
+
+// 2. Layouts   
+.center-block(){
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center(@value) when (@value = 'vh'){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.center(@value) when (@value = 'h'){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.center(@value) when (@value = 'v'){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+// 3. Fills / Borders
+.gradient (@origin: left, @start: #ffffff, @stop: #000000,@default: #333333){
+    background-color:   @start;
+    background-image:   -webkit-linear-gradient(@origin, @start, @stop);
+    background-image:   -moz-linear-gradient(@origin, @start, @stop);
+    background-image:   -o-linear-gradient(@origin, @start, @stop);
+    background-image:   -ms-linear-gradient(@origin, @start, @stop);
+    background-image:   linear-gradient(@origin, @start, @stop);
+}
+.vertical-gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF){
+    background:         @color;
+    background:         -webkit-gradient(linear,left bottom,left top,color-stop(0, @start),color-stop(1, @stop));
+    background:         -ms-linear-gradient(bottom,@start,@stop);
+    background:         -moz-linear-gradient(center bottom,@start 0%,@stop 100%);
+    background:         -o-linear-gradient(@stop, @start);
+    filter:             e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.horizontal-gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF){
+    background:         @color;
+    background:         -webkit-gradient(linear,left top,right top,color-stop(0, @start),color-stop(1, @stop));
+    background:         -ms-linear-gradient(left,@start,@stop);
+    background:         -moz-linear-gradient(left,@start 0%,@stop 100%);
+    background:         -o-linear-gradient(left @stop, @start);
+    filter: 						e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@stop,@start));
+}
+.border-radius-custom (@tl: 0px, @tr: 0px,@br: 0px,@bl: 0px){
+  -webkit-border-top-left-radius:     @tl;
+  -webkit-border-top-right-radius:    @tr;
+  -webkit-border-bottom-right-radius: @br;
+  -webkit-border-bottom-left-radius:  @bl;
+
+  -moz-border-radius-topleft:         @tl;
+  -moz-border-radius-topright:        @tr;
+  -moz-border-radius-bottomright:     @br;
+  -moz-border-radius-bottomleft:      @bl;
+
+  border-top-left-radius:             @tl;
+  border-top-right-radius:            @tr;
+  border-bottom-right-radius:         @br;
+  border-bottom-left-radius:          @bl;
+}
+.border-radius (@pix: 3px){
+  .border-radius-custom(@pix, @pix, @pix, @pix);
+}
+.box-shadow (@x: 0px, @y: 0px, @blur: 0px, @alpha: 0.1, @color:#000, @inset:false){
+  & when (@inset = false) {
+    -webkit-box-shadow: @x @y @blur fade(@color, @alpha*100);
+    -moz-box-shadow: @x @y @blur fade(@color, @alpha*100);
+    box-shadow: @x @y @blur fade(@color, @alpha*100);
+  }
+  & when (@inset = true) {
+    -webkit-box-shadow: inset @x @y @blur fade(@color, @alpha*100);
+    -moz-box-shadow: inset @x @y @blur fade(@color, @alpha*100);
+    box-shadow: inset @x @y @blur fade(@color, @alpha*100);
+  }
+}
+
+
+
+// 4. Transforms
+.transform(@arguments){
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+.rotate(@deg:5deg){
+    .transform(rotate(@deg));
+}
+.scale(@ratio:1.5){
+    .transform(scale(@ratio));
+}
+.translate(@x:0, @y:0){
+  .transform(translate(@x, @y));
+}
+.skew (@deg, @deg2){
+  .transform(skew(@deg, @deg2));
+}
+
+
+
+// 5. Filters
+.opacity (@trans){
+  zoom: 1;
+  -moz-opacity: (@trans/100);
+  filter:Alpha(opacity= @trans );
+  opacity:(@trans/100);
+}
+
+.desature(@porcentaje: 100%){
+  -webkit-filter: grayscale(@porcentaje);
+  -moz-filter: grayscale(@porcentaje);
+  -ms-filter: grayscale(@porcentaje);
+  -o-filter: grayscale(@porcentaje);
+  filter: grayscale(@porcentaje);
+  // filter: url(filters.svg#grayscale); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */
+}
+.cleanFilter(){
+  -webkit-filter:none;
+  -moz-filter:none;
+  -ms-filter:none;
+  -o-filter:none;
+  filter:none;
+}
+
+
+
+// 6. Animations
+.transition (@item: all, @time: 1s, @mode: linear, @delay: 0s){
+  	-webkit-transition:                 @item @time @mode @delay;
+  	-moz-transition:                    @item @time @mode @delay;
+  	-o-transition:                      @item @time @mode @delay;
+  	-ms-transition:                     @item @time @mode @delay;
+  	transition:                         @item @time @mode @delay;
+}
+
+.keyframes(@name , @keys) {
+    @-webkit-keyframes @name {
+      @keys();
+    }
+    @keyframes @name {
+      @keys();
+    }
+}
+
+.animation(@name,@duration:1s,@mode:ease-out,@direction:normal,@delay:0s,@fill-mode:forwards){
+      -webkit-animation-name: @name;
+      -webkit-animation-duration: @duration;
+      -webkit-animation-timing-function: @mode;
+      -webkit-animation-direction: @direction;
+      -webkit-animation-delay: @delay;
+      -webkit-animation-fill-mode: @fill-mode;
+      animation-name: @name;
+      animation-duration: @duration;
+      animation-timing-function: @mode;
+      animation-direction: @direction;
+      animation-delay: @delay;
+      animation-fill-mode: @fill-mode;
+}
+
+
+
+// 7. Tools
+.no-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+    -moz-column-width: @colwidth;
+    -moz-column-count: @colcount;
+    -moz-column-gap: @colgap;
+    -moz-column-rule-color: @columnRuleColor;
+    -moz-column-rule-style: @columnRuleStyle;
+    -moz-column-rule-width: @columnRuleWidth;
+    -webkit-column-width: @colwidth;
+    -webkit-column-count: @colcount;
+    -webkit-column-gap: @colgap;
+    -webkit-column-rule-color: @columnRuleColor;
+    -webkit-column-rule-style: @columnRuleStyle;
+    -webkit-column-rule-width: @columnRuleWidth;
+    column-width: @colwidth;
+    column-count: @colcount;
+    column-gap: @colgap;
+    column-rule-color: @columnRuleColor;
+    column-rule-style: @columnRuleStyle;
+    column-rule-width: @columnRuleWidth;
+}
+.background-full(@file, @position : 50% 50%, @size : cover){
+    background-image: url( @file );
+    background-position: @position;
+    background-size: @size;
+}
+.toFull(){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}

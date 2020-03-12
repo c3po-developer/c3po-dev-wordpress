@@ -1,0 +1,89 @@
+ /**
+ * Plugin Name: c3po Cookies
+ * Plugin URI: https://usalafuerza.com/
+ * Description: Add shortcode to include cookies advice
+ * Version: 0.1.0
+ * Author: web@usalafuerza.com
+ * Author URI: https://usalafuerza.com/
+ * License: C3-PO Usalafuerza
+ * Text Domain: c3po-includes
+ */
+ 
+.c3po-cookies-advice{ 
+    position: fixed;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 22px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border:1px solid rgb(255, 255, 255);
+    color:#333;
+    font-size: 0.8rem;
+    top: 0;
+    left:0;
+    z-index: 9999;
+    transform: translateY( -100% );
+}
+.c3po-cookies-advice .title {
+    font-size: 1.1rem;
+    color:#333;
+}
+
+.c3po-cookies-advice .content   {
+}
+
+ 
+.c3po-cookies-advice .content p {
+    color:#333;
+}
+.c3po-cookies-advice .content p a:link,.c3po-cookies-advice .content p a:visited{
+    color:rgb(8, 8, 8);
+    font-weight:bold;
+}
+.c3po-cookies-advice .content p a:hover,.c3po-cookies-advice .content p a:active{
+    color:rgb(75, 75, 75);
+}
+
+.c3po-cookies-advice .content #c3po-cookies-accept-btn:link,.c3po-cookies-advice .content #c3po-cookies-accept-btn:visited{
+    display:inline-block;
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.1);
+    border:1px solid rgb(180, 180, 180);
+    color:rgb(48, 48, 48);
+    text-decoration:none;
+    text-transform: uppercase;
+    padding:10px 14px;
+}
+.c3po-cookies-advice .content #c3po-cookies-accept-btn:hover,.c3po-cookies-advice .content #c3po-cookies-accept-btn:active{
+    border:1px solid rgb(117, 117, 117);
+    background-color:#fff;
+    color:rgb(56, 56, 56);
+}
+
+@keyframes c3po-cookies-advice-animation-in{
+    0%   {
+        transform: translateY( calc( -100% - 10px ) );
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes c3po-cookies-advice-animation-out{
+    0%   {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY( calc( -100% - 10px ) );
+    }
+}
+.c3po-cookies-advice-animation-in{
+    animation-name: c3po-cookies-advice-animation-in;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+.c3po-cookies-advice-animation-out{
+    animation-name: c3po-cookies-advice-animation-out;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}

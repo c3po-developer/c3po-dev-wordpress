@@ -14,8 +14,6 @@ $(function(){
     "use strict";
 
     c3po_paginator();
-  
-    $('.test-slider-01').slick();
    
 });
 

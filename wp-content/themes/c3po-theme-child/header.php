@@ -60,7 +60,7 @@
             <!-- nav -->
             <nav class="nav" role="navigation">
 
-                <?php C3POCore\Nav::get_menu_nav( 'main-nav-menu' ); ?>
+                <?php C3POCore\Nav::get_menu_nav( 'child-main-nav-menu' ); ?>
 
             </nav>
             <!-- /nav -->

@@ -2,7 +2,7 @@
 
 /**
  * droid-theme
- * Template Name: Parent | Default | Legals
+ * Template Name: legals
  * Muestra textos legales mediante la función y el parámetro.
  * Theme WordPress base de C3PO
  *

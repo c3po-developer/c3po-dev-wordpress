@@ -1,0 +1,335 @@
+// 1. MIXINS
+
+// 2. GLOBAL TAGS
+
+// 2.1. Document & body
+html{
+	font-size:unit(@px-global-font-size, px);
+	font-family: @content-font;
+}
+body{
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+// 2.2. Headers
+h1,h2,h3,h4,h5,h6{
+    font-family: @corporative-font;
+	small,.small{
+		font-size:0.6rem;
+	}
+}
+h1{
+    .font-size(1.8rem);
+    color: @h1-color;
+}
+h2{
+    .font-size(1.6rem);
+    color: @h2-color;
+}
+h3{
+    .font-size(1.4rem);
+    color: @h3-color;
+}
+h4{
+    .font-size(1.2rem);
+    color: @h4-color;
+}
+h5{
+    .font-size(1.1rem);
+    color: @h4-color;
+}
+h6{
+	.font-size(1rem);
+    color: @h4-color;
+}
+
+// 2.3. Texts
+// DIV Para prevenir textos sin tag de texto
+p, li, div{
+	color: @text-color;
+	font-family: @content-font;
+	.font-size(0.9rem);
+}
+
+// 2.4. Links
+a:link,a:visited{
+	font-family: @content-font;
+    color: @link-color;
+    text-decoration:none;
+}
+a:hover,a:active{
+	color: @link-hover-color;
+}
+header nav{
+	a:link,a:visited{
+        font-family: @corporative-font;
+		color: @nav-link-color;
+        text-decoration:none;
+	}
+	a:hover,a:active{
+		color: @nav-link-hover-color;
+	}
+}
+
+// 2.5. Forms
+fieldset{
+	padding: @padding-l;
+}
+button,input[type="button"]{
+	background-color: @primary-color;
+	color:@text-color;
+	padding: @padding-m;
+	&:hover{
+		background-color: @secondary-color;
+		color:@text-color;
+	}
+}
+input {
+	border:1px solid @input-border-color;
+	color: @input-text-color;
+	background: @input-background-color;
+	&::-webkit-input-placeholder {
+        color: @input-placeholder-color;
+    }
+    &:-moz-placeholder {
+        color: @input-placeholder-color;
+        opacity:1;
+    }
+    &::-moz-placeholder {
+        color: @input-placeholder-color;
+        opacity:1;
+    }
+    &:-ms-input-placeholder {
+        color: @input-placeholder-color;
+    }
+	&:focus{
+		border:1px solid @input-focus-border-color;
+    }
+    &[type="text"]{
+	}
+	&[type="reset"]{
+	}
+	&[type="submit"]{
+	}
+	&[type="checkbox"]{
+	}
+	&[type="radio"]{
+	}
+	&[type="number"]{
+	}
+	&[type="search"]{
+	}
+}
+optgroup{
+
+}
+select{
+	border:1px solid @input-border-color;
+	color: @input-text-color;
+	background: @input-background-color;
+}
+textarea{
+	border:1px solid @input-border-color;
+	color: @input-text-color;
+	background: @input-background-color;
+	&::-webkit-input-placeholder {
+        color: @input-placeholder-color;
+    }
+    &:-moz-placeholder {
+        color: @input-placeholder-color;
+        opacity:1;
+    }
+    &::-moz-placeholder {
+        color: @input-placeholder-color;
+        opacity:1;
+    }
+    &:-ms-input-placeholder {
+        color: @input-placeholder-color;
+    }
+}
+label{
+
+}
+
+// 2.6. Tables
+table{
+    width: 100%;
+    thead{
+        background: @gray-1-color;
+        font-size: 1rem;
+        border: 1px solid @gray-2-color;
+        tr{
+            th{
+                max-width:100%;
+                white-space:nowrap;
+                padding: 10px;
+                border-right: 1px solid @gray-2-color;
+                padding: @padding-l;
+                &:last-child{
+                    border-bottom: 0px solid transparent;
+                }
+                &:first-child{
+                    border-left: 1px solid @gray-2-color;
+                }
+            }
+        }
+    }
+    tfoot{
+        border: 1px solid @gray-2-color;
+        background: @gray-1-color;
+        tr{
+            th{
+                max-width:100%;
+                white-space:nowrap;
+                padding: 10px;
+                
+            }
+            td{
+                font-size: 1rem;
+                font-weight: 700;
+                max-width:100%;
+                white-space:nowrap;
+                padding: 10px;
+                border-right: 1px solid @gray-2-color;
+                &:last-child{
+                    border-bottom: 0px solid transparent;
+                }
+                &:first-child{
+                    border-left: 1px solid @gray-2-color;
+                }
+            }
+        } 
+    }
+    tbody{
+        tr{
+            border-bottom: 1px solid @gray-2-color;
+            &:hover{
+                background: @gray-2-color; 
+            } 
+            th{
+                padding: @padding-m;
+            }
+            td{
+                padding: @padding-m;
+                border-right: 1px solid @gray-2-color;
+                &:last-child{
+                    border-bottom: 0px solid transparent;
+                }
+                &:first-child{
+                    border-left: 1px solid @gray-2-color;
+                }
+            }
+        }
+    }
+}
+
+// 3. Blocks
+.viewport{
+    width:@width-viewport;
+    max-width: @max-width-viewport;
+    height: auto;
+    margin: 0 auto;
+ }
+
+// 4. CONTENT
+
+//  4.1 Single Post / CPT Presets
+body.single{
+    .site-wrapper{ // Contenido entre HEADER y FOOTER
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        ul,ol{
+            padding:@padding-l;
+        }
+        .wp-caption, .gallery-caption, .bypostauthor {
+            margin-bottom: 1.5em;
+            text-align: center;
+            padding-top:@padding-s;
+        }
+        .wp-caption img {
+            border: 0 none;
+            padding: 0;
+            margin: 0;
+        }
+        .wp-caption p.wp-caption-text {
+            line-height: 1.5;
+            margin: 0;
+        }
+    }
+}
+
+// 4.2 Main
+main{
+    img{
+        max-width: 100%;
+    }
+} 
+
+// 5. HEADER
+header.site-header{ 
+    font-size: 0;
+    box-sizing: border-box;
+   h2.site-logo{
+       display: inline-block;
+       a{
+           img.site-logo-img{
+               width: 300px;
+           }
+       }
+   }
+   nav.nav{
+       display: inline-block;
+       vertical-align: middle; 
+       transform: translateY(-40px);
+       width: ~"calc(100% - 300px)";
+       ul{
+           margin: 0;
+           padding: 0;
+           list-style: none;
+           text-align: right;
+           li{
+               display: inline-block;
+               margin: 0 0 0 10px;
+               a{
+                   font-size: 1rem;
+                   font-weight: 900;
+                   text-decoration: none;
+                   text-transform: uppercase;
+                   color: #000;
+                   position: relative;
+                   &:after{
+                       content: '';
+                       width: 100%;
+                       height: 2px;
+                       bottom: -10px;
+                       left: 0;
+                       position: absolute;
+                       display: block;
+                       background: #000;
+                       opacity: 0;
+                       transition: all .333s ease;
+                   } 
+                   &:hover{
+                    &:after{ 
+                        bottom: 0px; 
+                        opacity: 1;
+                        }
+                   }
+               }
+           }
+       }
+   }
+}
+
+// 6. SITE WRAPPER GLOBAL STYLES
+div.site-wrapper{
+
+} 
+
+// 7. FOOTER
+footer.site-footer{
+    
+}
